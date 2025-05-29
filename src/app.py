@@ -28,6 +28,12 @@ jackson_family.add_member({
     "age": 35,
     "lucky_numbers": [10, 14, 3]
 })
+jackson_family.add_member({
+    "id": jackson_family._generateId(),
+    "first_name": "Jimmy",
+    "age": 5,
+    "lucky_numbers": [1]
+})
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
