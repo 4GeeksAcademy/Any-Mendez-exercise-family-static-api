@@ -17,7 +17,7 @@ jackson_family = FamilyStructure("Jackson")
 
 # Los añado aquí para que existan cuando la aplicación inicie
 jackson_family.add_member({
-    "id": jackson_family._generateId(), # Usa el generador de ID
+    "id": jackson_family._generateId(),
     "first_name": "John",
     "age": 33,
     "lucky_numbers": [7, 13, 22]
@@ -49,11 +49,7 @@ def sitemap():
 def handle_get_all_members():
     # this is how you can use the Family datastructure by calling its methods
     members = jackson_family.get_all_members()
-    response_body = {
-       
-        "members": members
-    }
-    return jsonify(response_body), 200
+    return jsonify(members), 200
 
 @app.route('/member/<int:member_id>', methods=['GET'])
 def handle_get_single_member(member_id):
